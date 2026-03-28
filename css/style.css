@@ -266,3 +266,139 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
+
+/* === Sections Common === */
+.section {
+    padding: 100px 0;
+}
+
+.section:nth-child(even) {
+    background: var(--color-bg-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+/* === About === */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.about-text p {
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.about-image-placeholder {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.about-image-placeholder svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Timeline */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-border);
+}
+
+.timeline-item {
+    text-align: center;
+    position: relative;
+    flex: 1;
+}
+
+.timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--gradient);
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-year {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+}
+
+.timeline-content p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 30px;
+        padding-left: 30px;
+    }
+
+    .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 7px;
+        right: auto;
+        width: 2px;
+        height: auto;
+    }
+
+    .timeline-item {
+        text-align: left;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: -30px;
+        top: 4px;
+        margin: 0;
+    }
+}
