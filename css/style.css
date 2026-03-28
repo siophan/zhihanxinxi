@@ -486,6 +486,116 @@ body {
 
 .case-cover {
     height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Cover animated shapes */
+.cover-shape {
+    position: absolute;
+    opacity: 0.2;
+}
+
+.shape-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    top: 20px;
+    right: 30px;
+    animation: shapeFloat 6s ease-in-out infinite;
+}
+
+.shape-square {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 6px;
+    bottom: 25px;
+    left: 25px;
+    animation: shapeSpin 8s linear infinite;
+}
+
+.shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 44px solid #fff;
+    top: 30px;
+    left: 40%;
+    animation: shapeFloat 7s ease-in-out infinite reverse;
+}
+
+.shape-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    bottom: 30px;
+    right: 20%;
+    animation: shapePulse 3s ease-in-out infinite;
+}
+
+.shape-ring {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    top: 15px;
+    left: 20px;
+    animation: shapeSpin 10s linear infinite;
+}
+
+.shape-cross {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    right: 15%;
+    transform: translateY(-50%);
+    animation: shapeSpin 6s linear infinite reverse;
+}
+
+.shape-cross::before,
+.shape-cross::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.shape-cross::before {
+    width: 100%;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.shape-cross::after {
+    width: 4px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes shapeFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes shapeSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shapePulse {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.5); opacity: 0.35; }
+}
+
+.case-card:hover .cover-shape {
+    opacity: 0.35;
+    transition: opacity 0.3s;
 }
 
 .case-body {
