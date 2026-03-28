@@ -463,3 +463,54 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* === Cases === */
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.case-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.case-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.case-cover {
+    height: 180px;
+}
+
+.case-body {
+    padding: 24px;
+}
+
+.case-body h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.case-body p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .cases-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
